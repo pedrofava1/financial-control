@@ -9,25 +9,30 @@ const Login = () => {
   const [messageType, setMessageType] = useState('');
 
   const handleSubmit = async (event) => {
-    event.preventDefault();
-
+    event.preventDefault(); // 🔹 Garante que o form não recarrega a página
+  
     try {
-      const response = await axios.post('http://localhost:8080/login', {
+      const response = await axios.post('http://localhost:8080/auth/login', {
         email,
         password,
       });
-
+  
       if (response.status === 200 || response.status === 201) {
+        const token = response.data.token; // 🔹 Pegando o token retornado pelo backend
+        localStorage.setItem("token", token); // 🔹 Salvando no localStorage
+        console.log("esse é o token: ",localStorage.getItem("token"))
         setMessageType('success');
         setMessage('Autenticação bem-sucedida! Redirecionando...');
+  
         setTimeout(() => {
-          setMessage('');
-        }, 3000);
+          window.location.href = "/home"; // 🔹 Redirecionando manualmente
+        }, 2000);
       } else {
         setMessageType('error');
         setMessage('Erro: Credenciais inválidas.');
       }
     } catch (error) {
+      console.error("Erro ao autenticar:", error);
       setMessageType('error');
       setMessage('Erro: Credenciais inválidas.');
     }

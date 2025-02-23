@@ -1,3 +1,16 @@
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+
+/* Garante que o React ocupe 100% da tela */
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
 .landing-container {
     font-family: 'Arial', sans-serif;
     color: #333;

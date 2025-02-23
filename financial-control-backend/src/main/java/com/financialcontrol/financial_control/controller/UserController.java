@@ -1,5 +1,6 @@
 package com.financialcontrol.financial_control.controller;
 
+import com.financialcontrol.financial_control.dto.UserDTO;
 import com.financialcontrol.financial_control.model.User;
 import com.financialcontrol.financial_control.service.UserService;
 import org.springframework.http.HttpStatus;
@@ -20,22 +21,12 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public ResponseEntity<String> registerUser(@RequestBody User user) {
+    public ResponseEntity<String> registerUser(@RequestBody UserDTO userDTO) {
         try {
-            userService.registerUser(user.getEmail(), user.getPassword(), user.getName());
+            userService.registerUser(userDTO);
         } catch (Exception e) {
             return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
         }
         return ResponseEntity.status(HttpStatus.CREATED).body("Usuário cadastrado com sucesso");
-    }
-
-    @PostMapping("/login")
-    public ResponseEntity<String> loginUser(@RequestBody User user) {
-        try {
-            userService.loginUser(user.getEmail(), user.getPassword());
-        } catch (Exception e) {
-            return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(e.getMessage());
-        }
-        return ResponseEntity.status(HttpStatus.OK).body("Usuário logado com sucesso");
     }
 }

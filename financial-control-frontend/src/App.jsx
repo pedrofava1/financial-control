@@ -13,9 +13,8 @@ const App = () => {
         <Route path="/" element={<LandingPage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
-        {/* Protegendo a rota home com o PrivateRoute */}
-        <Route path="/home" element={<PrivateRoute />}>
-          <Route path="" element={<Home />} />
+        <Route path="/" element={<PrivateRoute />}>
+          <Route path="/home" element={<Home />} />
         </Route>
       </Routes>
     </Router>

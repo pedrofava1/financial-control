@@ -1,15 +1,14 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import './css/landingPage.css';
+import React from "react";
+import "./css/landingPage.css";
 
 const LandingPage = () => {
   return (
     <div className="landing-container">
       <header className="landing-header">
-        <h1 className="landing-title">Controle Financeiro</h1>
+        <h1 className="landing-title">Bem-vindo ao Controle Financeiro</h1>
         <nav className="landing-nav">
-          <Link to="/login" className="landing-link">Sign In</Link>
-          <Link to="/register" className="landing-link">Register</Link>
+          <a href="/login" className="landing-link">Sign In</a>
+          <a href="/register" className="landing-link">Register</a>
         </nav>
       </header>
       <main className="landing-main">
