@@ -1,0 +1,20 @@
+# Ignorar diretórios de build e arquivos gerados
+target/
+build/
+
+# Ignorar arquivos de configurações do IntelliJ
+.idea/
+*.iml
+
+# Ignorar configurações do VS Code
+.vscode/
+
+# Ignorar arquivos específicos do STS e NetBeans
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+/nbproject/private/
