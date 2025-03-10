@@ -5,7 +5,7 @@ Este é um projeto de controle financeiro que utiliza **Spring Boot** para o bac
 ## Tecnologias Utilizadas
 
 ### Backend
-- **Spring Boot ** - Framework Java para criar o backend da aplicação.
+- **Spring Boot** - Framework Java para criar o backend da aplicação.
 - **Spring Security** - Para autenticação e segurança.
 - **JPA/Hibernate** - Para persistência de dados.
 - **PostgreSQL** - Banco de dados utilizado para armazenar os dados.
